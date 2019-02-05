@@ -1,0 +1,11 @@
+clc;
+clear all;
+close all;
+I=imread('Cameraman.tif');
+subplot(131),imshow(I);
+title('Original Image');
+h=ones(5,5)/25;
+i_noise=imnoise(I,'gaussian',0,.01);
+j=imfilter(i_noise,h);
+subplot(132),imshow(i_noise),title('Noisy Image');
+subplot(133),imshow(j),title('Average Filtered Image');
